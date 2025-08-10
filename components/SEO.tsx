@@ -22,7 +22,7 @@ export function SEO({ title, description, image }: SEOProps) {
   const metaDesc = description || DEFAULT.description;
   const metaImage = image || DEFAULT.image;
 
-  const businessName = process.env.NEXT_PUBLIC_BUSINESS_NAME || 'עיצוב בלונים';
+  const businessName = process.env.NEXT_PUBLIC_BUSINESS_NAME || 'רון בלון';
   const phone = process.env.NEXT_PUBLIC_WHATSAPP || '';
   const address = process.env.NEXT_PUBLIC_BUSINESS_ADDRESS || '';
 

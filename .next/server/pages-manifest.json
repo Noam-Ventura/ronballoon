@@ -1,8 +1,1 @@
-{
-  "/_app": "pages/_app.js",
-  "/_error": "pages/_error.js",
-  "/_document": "pages/_document.js",
-  "/404": "pages/404.js",
-  "/": "pages/index.js",
-  "/api/reviews": "pages/api/reviews.js"
-}
+{"/_app":"pages/_app.js","/_error":"pages/_error.js","/_document":"pages/_document.js","/api/reviews":"pages/api/reviews.js","/categories/brit":"pages/categories/brit.js","/404":"pages/404.js","/categories/birthday":"pages/categories/birthday.js","/about":"pages/about.js","/categories/events":"pages/categories/events.js","/categories/wedding":"pages/categories/wedding.js","/":"pages/index.js","/contact":"pages/contact.js","/he/500":"pages/he/500.html"}

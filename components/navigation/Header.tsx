@@ -26,7 +26,7 @@ export default function Header() {
     <header className={`sticky top-0 z-50 transition-all ${scrolled ? 'bg-white/90 backdrop-blur border-b border-gray-100' : 'bg-white'}`}>
       <div className="container flex items-center justify-between py-3">
         <div className="flex items-center gap-3">
-          <Link href="/" className="text-xl font-extrabold text-brand-700">בלון׳לה</Link>
+          <Link href="/" className="text-xl font-extrabold text-brand-700">רון בלון</Link>
         </div>
         <nav className="hidden md:flex items-center gap-6">
           {NAV.map((item) => (

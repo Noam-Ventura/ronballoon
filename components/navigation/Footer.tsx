@@ -9,7 +9,7 @@ export default function Footer() {
     <footer className="mt-16 border-t border-gray-100 bg-gray-50">
       <div className="container py-10 grid md:grid-cols-3 gap-8">
         <div>
-          <h3 className="text-lg font-bold mb-3">בלון׳לה</h3>
+          <h3 className="text-lg font-bold mb-3">רון בלון</h3>
           <p className="text-sm text-gray-600">עיצוב בלונים לאירועים מכל הסוגים. נגיעה אישית, תוצאה מרשימה.</p>
         </div>
         <div>
@@ -32,7 +32,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="py-4 text-center text-xs text-gray-500">© {new Date().getFullYear()} בלון׳לה</div>
+      <div className="py-4 text-center text-xs text-gray-500">© {new Date().getFullYear()} רון בלון</div>
     </footer>
   );
 }
