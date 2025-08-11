@@ -37,9 +37,9 @@ export default function EventsPage({ categories }: EventsPageProps) {
   return (
     <Layout>
       <SEO title="אירועים" />
-      <section className="container py-12 grid md:grid-cols-2 gap-10 items-center">
+      <section className="container py-8 sm:py-12 px-4 sm:px-6 grid md:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 items-center">
         <Reveal>
-          <div className="aspect-[4/3] rounded-3xl overflow-hidden border border-gray-100">
+          <div className="aspect-[4/3] rounded-2xl sm:rounded-3xl overflow-hidden border border-gray-100">
             <Image
               src="/categories/events-card.jpg"
               alt="עיצוב בלונים לאירועים"
@@ -47,23 +47,24 @@ export default function EventsPage({ categories }: EventsPageProps) {
               height={450}
               className="w-full h-full object-cover"
               priority
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
             />
           </div>
         </Reveal>
         <Reveal>
-          <div>
-            <h1 className="mb-4">אירועים</h1>
-            <p className="text-gray-600">עיצוב בלונים לאירועים עסקיים ופרטיים, התאמה מלאה לקונספט ומקום.</p>
+          <div className="text-center md:text-right">
+            <h1 className="mb-4 text-2xl sm:text-3xl lg:text-4xl">אירועים</h1>
+            <p className="text-gray-600 text-sm sm:text-base lg:text-lg">עיצוב בלונים לאירועים עסקיים ופרטיים, התאמה מלאה לקונספט ומקום.</p>
           </div>
         </Reveal>
       </section>
 
-      <section className="container py-12">
+      <section className="container py-8 sm:py-12 px-4 sm:px-6">
         <Reveal>
-          <div className="flex flex-wrap gap-4 mb-8">
+          <div className="flex flex-wrap gap-2 sm:gap-4 mb-6 sm:mb-8 justify-center md:justify-start">
             <button
               onClick={() => setActiveFilter('all')}
-              className={`px-4 py-2 rounded-lg border transition-colors ${
+              className={`px-3 sm:px-4 py-2 sm:py-3 rounded-lg border transition-colors min-h-[48px] text-sm sm:text-base ${
                 activeFilter === 'all'
                   ? 'bg-brand-500 text-white border-brand-500'
                   : 'bg-white text-gray-700 border-gray-300 hover:border-brand-500'
@@ -75,7 +76,7 @@ export default function EventsPage({ categories }: EventsPageProps) {
               <button
                 key={category.id}
                 onClick={() => setActiveFilter(category.id)}
-                className={`px-4 py-2 rounded-lg border transition-colors ${
+                className={`px-3 sm:px-4 py-2 sm:py-3 rounded-lg border transition-colors min-h-[48px] text-sm sm:text-base ${
                   activeFilter === category.id
                     ? 'bg-brand-500 text-white border-brand-500'
                     : 'bg-white text-gray-700 border-gray-300 hover:border-brand-500'
@@ -89,25 +90,26 @@ export default function EventsPage({ categories }: EventsPageProps) {
 
         {filteredCategories.map((category) => (
           <Reveal key={category.id}>
-            <div className="mb-12">
-              <div className="flex justify-between items-center mb-6">
-                <div>
-                  <h2 className="text-2xl font-bold mb-2">{category.title}</h2>
-                  <p className="text-gray-600">{category.description}</p>
+            <div className="mb-8 sm:mb-12">
+              <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 sm:mb-6 gap-3 sm:gap-4">
+                <div className="text-center sm:text-right">
+                  <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-2">{category.title}</h2>
+                  <p className="text-gray-600 text-sm sm:text-base">{category.description}</p>
                 </div>
-                <Link href={category.href} className="btn btn-secondary">
+                <Link href={category.href} className="btn btn-secondary min-h-[48px] px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base w-full sm:w-auto">
                   צפה בגלריה המלאה
                 </Link>
               </div>
-              <div className="grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+              <div className="grid gap-2 sm:gap-4 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4">
                 {category.images.slice(0, 8).map((src) => (
-                  <div key={src} className="aspect-square overflow-hidden rounded-xl border border-gray-100">
+                  <div key={src} className="aspect-square overflow-hidden rounded-lg sm:rounded-xl border border-gray-100">
                     <Image 
                       src={src} 
                       alt={`${category.title} - עיצוב בלונים`} 
                       width={600} 
                       height={600} 
-                      className="w-full h-full object-cover" 
+                      className="w-full h-full object-cover"
+                      sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 600px"
                     />
                   </div>
                 ))}

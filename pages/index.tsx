@@ -21,11 +21,11 @@ export default function HomePage() {
       <SEO />
       <Hero />
 
-      <section id="categories" className="container py-12">
+      <section id="categories" className="container py-8 sm:py-12 px-4 sm:px-6">
         <Reveal>
-          <h2 className="mb-6">הקטגוריות שלנו</h2>
+          <h2 className="mb-4 sm:mb-6 text-xl sm:text-2xl lg:text-3xl text-center md:text-right">הקטגוריות שלנו</h2>
         </Reveal>
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {categories.map((c) => (
             <Reveal key={c.href}>
               <CategoryCard {...c} />
@@ -34,30 +34,31 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="container py-12 grid md:grid-cols-2 gap-10 items-center">
+      <section className="container py-8 sm:py-12 px-4 sm:px-6 grid md:grid-cols-2 gap-6 sm:gap-8 lg:gap-10 items-center">
         <Reveal>
-          <div className="aspect-[4/3] rounded-3xl overflow-hidden border border-gray-100">
+          <div className="aspect-[4/3] rounded-2xl sm:rounded-3xl overflow-hidden border border-gray-100">
             <Image
               src="/home/background.jpg"
               alt="עיצוב בלונים מקצועי"
               width={600}
               height={450}
               className="w-full h-full object-cover"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
             />
           </div>
         </Reveal>
         <Reveal>
-          <div>
-            <h2 className="mb-4">קצת עלינו</h2>
-            <p className="text-gray-600 mb-4">רון בלון מתמחה באמנות ועיצוב בלונים לאירועים – עם מגוון עיצובים, ציוד איכותי ומותגים מובילים. נשמח לשמח באירועים פרטיים ועסקיים עם עיצובים מותאמים אישית.</p>
-            <Link href="/about" className="btn btn-secondary">לקריאה נוספת</Link>
+          <div className="text-center md:text-right">
+            <h2 className="mb-3 sm:mb-4 text-xl sm:text-2xl lg:text-3xl">קצת עלינו</h2>
+            <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base lg:text-lg leading-relaxed">רון בלון מתמחה באמנות ועיצוב בלונים לאירועים – עם מגוון עיצובים, ציוד איכותי ומותגים מובילים. נשמח לשמח באירועים פרטיים ועסקיים עם עיצובים מותאמים אישית.</p>
+            <Link href="/about" className="btn btn-secondary min-h-[48px] px-6 py-3 text-sm sm:text-base">לקריאה נוספת</Link>
           </div>
         </Reveal>
       </section>
 
-      <section className="container py-12">
+      <section className="container py-8 sm:py-12 px-4 sm:px-6">
         <Reveal>
-          <h2 className="mb-6">חוות דעת גוגל</h2>
+          <h2 className="mb-4 sm:mb-6 text-xl sm:text-2xl lg:text-3xl text-center md:text-right">חוות דעת גוגל</h2>
         </Reveal>
         <div className="grid gap-6 lg:grid-cols-2">
           <ReviewsSummary />
@@ -65,12 +66,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="container py-12 max-w-5xl">
+      <section className="container py-8 sm:py-12 px-4 sm:px-6 max-w-5xl">
         <Reveal>
-          <h2 className="mb-6">איפה אנחנו?</h2>
+          <h2 className="mb-4 sm:mb-6 text-xl sm:text-2xl lg:text-3xl text-center md:text-right">איפה אנחנו?</h2>
         </Reveal>
         <div className="max-w-3xl mx-auto">
-          <MapEmbed className="aspect-[16/9]" />
+          <MapEmbed className="aspect-[16/9] rounded-2xl sm:rounded-3xl" />
         </div>
       </section>
     </Layout>

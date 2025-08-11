@@ -76,47 +76,63 @@ export default function ContactPage() {
   return (
     <Layout>
       <SEO title="יצירת קשר" />
-      <section className="container py-12 grid lg:grid-cols-2 gap-10">
+      <section className="container py-8 sm:py-12 px-4 sm:px-6 grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10">
         <div>
           <Reveal>
-            <h1 className="mb-4">נשמח לשמוע ממכם</h1>
+            <h1 className="mb-4 text-2xl sm:text-3xl lg:text-4xl text-center lg:text-right">נשמח לשמוע ממכם</h1>
           </Reveal>
           <Reveal>
-            <div className="flex gap-3 mb-6">
-              <a className="btn btn-primary" href={`https://wa.me/${phone}`} target="_blank" rel="noopener noreferrer">ווטסאפ</a>
-              <a className="btn btn-secondary" href={`mailto:${email}`}>אימייל</a>
+            <div className="flex flex-col sm:flex-row gap-3 mb-6 justify-center lg:justify-start">
+              <a className="btn btn-primary min-h-[48px] px-6 py-3 text-sm sm:text-base" href={`https://wa.me/${phone}`} target="_blank" rel="noopener noreferrer">ווטסאפ</a>
+              <a className="btn btn-secondary min-h-[48px] px-6 py-3 text-sm sm:text-base" href={`mailto:${email}`}>אימייל</a>
             </div>
           </Reveal>
           <Reveal>
-            <form className="card p-6 grid gap-4" onSubmit={onSubmit}>
+            <form className="card p-4 sm:p-6 grid gap-4 sm:gap-6" onSubmit={onSubmit}>
               <div className="grid gap-2">
-                <label htmlFor="name" className="text-sm">שם מלא</label>
-                <input id="name" name="name" required className="border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-300" />
+                <label htmlFor="name" className="text-sm font-medium">שם מלא</label>
+                <input 
+                  id="name" 
+                  name="name" 
+                  required 
+                  className="border rounded-xl px-4 py-4 sm:py-3 focus:outline-none focus:ring-2 focus:ring-brand-300 text-base min-h-[48px]" 
+                />
               </div>
               <div className="grid gap-2">
-                <label htmlFor="email" className="text-sm">אימייל</label>
-                <input id="email" name="email" type="email" className="border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-300" />
+                <label htmlFor="email" className="text-sm font-medium">אימייל</label>
+                <input 
+                  id="email" 
+                  name="email" 
+                  type="email" 
+                  className="border rounded-xl px-4 py-4 sm:py-3 focus:outline-none focus:ring-2 focus:ring-brand-300 text-base min-h-[48px]" 
+                />
               </div>
               <div className="grid gap-2">
-                <label htmlFor="message" className="text-sm">הודעה</label>
-                <textarea id="message" name="message" required rows={4} className="border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-300" />
+                <label htmlFor="message" className="text-sm font-medium">הודעה</label>
+                <textarea 
+                  id="message" 
+                  name="message" 
+                  required 
+                  rows={4} 
+                  className="border rounded-xl px-4 py-4 sm:py-3 focus:outline-none focus:ring-2 focus:ring-brand-300 text-base resize-none" 
+                />
               </div>
               <div className="hidden">
                 <label>אל תמלאו<input name="company" /></label>
               </div>
-              <div className="flex items-center gap-3">
-                <button className="btn btn-primary" disabled={status==='sending'}>
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
+                <button className="btn btn-primary min-h-[48px] px-6 py-3 text-sm sm:text-base w-full sm:w-auto" disabled={status==='sending'}>
                   {status==='sending' ? 'שולח…' : 'שליחה'}
                 </button>
-                {status==='success' && <span className="text-green-600 text-sm">תודה! נחזור אליכם בקרוב.</span>}
-                {status==='error' && <span className="text-red-600 text-sm">{errorMessage || 'שגיאה בשליחה. נסו שוב.'}</span>}
+                {status==='success' && <span className="text-green-600 text-sm sm:text-base">תודה! נחזור אליכם בקרוב.</span>}
+                {status==='error' && <span className="text-red-600 text-sm sm:text-base">{errorMessage || 'שגיאה בשליחה. נסו שוב.'}</span>}
               </div>
             </form>
           </Reveal>
         </div>
         <div>
           <Reveal>
-            <MapEmbed />
+            <MapEmbed className="rounded-2xl sm:rounded-3xl" />
           </Reveal>
         </div>
       </section>
