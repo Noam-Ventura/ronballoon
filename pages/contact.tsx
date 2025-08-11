@@ -8,32 +8,67 @@ import { sanitizeText, isSpamLike } from '@/lib/sanitize';
 export default function ContactPage() {
   const phone = process.env.NEXT_PUBLIC_WHATSAPP || '';
   const email = process.env.NEXT_PUBLIC_EMAIL || '';
-  const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_ID || '';
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
     const formData = new FormData(form);
+    
     const name = sanitizeText(String(formData.get('name') || ''));
-    const msg = sanitizeText(String(formData.get('message') || ''), 1000);
-    const honey = String(formData.get('company') || ''); // honeypot
-    if (!name || !msg || honey || isSpamLike(msg)) {
+    const email = sanitizeText(String(formData.get('email') || ''));
+    const message = sanitizeText(String(formData.get('message') || ''), 1000);
+    const honeypot = String(formData.get('company') || ''); // honeypot
+    
+    // Client-side validation
+    if (!name || !message) {
+      setErrorMessage('שם והודעה הם שדות חובה');
       setStatus('error');
       return;
     }
+    
+    if (honeypot || isSpamLike(message)) {
+      setErrorMessage('הודעה לא תקינה');
+      setStatus('error');
+      return;
+    }
+    
+    if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setErrorMessage('פורמט אימייל לא תקין');
+      setStatus('error');
+      return;
+    }
+
     try {
       setStatus('sending');
-      if (!formspreeId) throw new Error('Missing Formspree');
-      const res = await fetch(`https://formspree.io/f/${formspreeId}`, {
+      setErrorMessage('');
+      
+      const response = await fetch('/api/contact', {
         method: 'POST',
-        headers: { 'Accept': 'application/json' },
-        body: new FormData(form),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          message,
+          honeypot,
+        }),
       });
-      if (!res.ok) throw new Error('Failed');
-      setStatus('success');
-      form.reset();
-    } catch {
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setStatus('success');
+        form.reset();
+      } else {
+        setErrorMessage(data.error || 'שגיאה בשליחה. נסו שוב.');
+        setStatus('error');
+      }
+    } catch (error) {
+      console.error('Contact form error:', error);
+      setErrorMessage('שגיאה בשליחה. נסו שוב.');
       setStatus('error');
     }
   }
@@ -74,7 +109,7 @@ export default function ContactPage() {
                   {status==='sending' ? 'שולח…' : 'שליחה'}
                 </button>
                 {status==='success' && <span className="text-green-600 text-sm">תודה! נחזור אליכם בקרוב.</span>}
-                {status==='error' && <span className="text-red-600 text-sm">שגיאה בשליחה. נסו שוב.</span>}
+                {status==='error' && <span className="text-red-600 text-sm">{errorMessage || 'שגיאה בשליחה. נסו שוב.'}</span>}
               </div>
             </form>
           </Reveal>

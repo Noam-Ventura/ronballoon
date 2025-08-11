@@ -25,9 +25,9 @@ export default function Header() {
         <div className="flex items-center gap-3">
           <Link href="/" className="text-xl font-extrabold text-brand-700">רון בלון</Link>
         </div>
-        <nav className="hidden md:flex items-center gap-6">
+        <nav className="hidden md:flex items-center gap-8">
           {NAV.map((item) => (
-            <Link key={item.href} href={item.href} className="text-sm hover:text-brand-700">
+            <Link key={item.href} href={item.href} className="text-lg font-semibold text-gray-700 hover:text-brand-700 transition-colors duration-200 px-3 py-2 rounded-lg hover:bg-brand-50">
               {item.label}
             </Link>
           ))}
@@ -43,7 +43,7 @@ export default function Header() {
         <div className="md:hidden border-t border-gray-100 bg-white">
           <div className="container py-4 grid gap-3">
             {NAV.map((item) => (
-              <Link key={item.href} href={item.href} className="py-2" onClick={() => setOpen(false)}>
+              <Link key={item.href} href={item.href} className="text-lg font-semibold text-gray-700 hover:text-brand-700 py-3 px-4 rounded-lg hover:bg-brand-50 transition-colors duration-200" onClick={() => setOpen(false)}>
                 {item.label}
               </Link>
             ))}

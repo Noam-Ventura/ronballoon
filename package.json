@@ -9,10 +9,12 @@
     "postbuild": "next-sitemap"
   },
   "dependencies": {
+    "@types/nodemailer": "^6.4.17",
     "@vercel/blob": "^1.1.1",
     "@vercel/edge-config": "^1.1.1",
     "clsx": "^2.1.1",
     "next": "^14.2.5",
+    "nodemailer": "^7.0.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
