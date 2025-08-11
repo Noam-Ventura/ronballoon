@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Hero() {
   return (
@@ -12,7 +13,16 @@ export default function Hero() {
             <Link href="#categories" className="btn btn-secondary">הקטגוריות שלנו</Link>
           </div>
         </div>
-        <div className="order-1 md:order-2 aspect-[4/3] bg-gradient-to-br from-brand-50 to-white rounded-3xl border border-gray-100" aria-label="placeholder"/>
+        <div className="order-1 md:order-2 aspect-[4/3] rounded-3xl overflow-hidden border border-gray-100">
+          <Image
+            src="/home/hero.jpg"
+            alt="עיצוב בלונים מקצועי לאירועים"
+            width={600}
+            height={450}
+            className="w-full h-full object-cover"
+            priority
+          />
+        </div>
       </div>
     </section>
   );

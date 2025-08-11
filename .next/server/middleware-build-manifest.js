@@ -1,1 +1,39 @@
-self.__BUILD_MANIFEST={polyfillFiles:["static/chunks/polyfills-42372ed130431b0a.js"],devFiles:[],ampDevFiles:[],lowPriorityFiles:[],rootMainFiles:[],pages:{"/":["static/chunks/webpack-ee7e63bc15b31913.js","static/chunks/framework-64ad27b21261a9ce.js","static/chunks/main-b7db6b1126c92596.js","static/chunks/664-3c232805d7900af2.js","static/chunks/pages/index-f9eb4e1ac76e0dbc.js"],"/404":["static/chunks/webpack-ee7e63bc15b31913.js","static/chunks/framework-64ad27b21261a9ce.js","static/chunks/main-b7db6b1126c92596.js","static/chunks/664-3c232805d7900af2.js","static/chunks/pages/404-720b3f54cbe25fe2.js"],"/_app":["static/chunks/webpack-ee7e63bc15b31913.js","static/chunks/framework-64ad27b21261a9ce.js","static/chunks/main-b7db6b1126c92596.js","static/css/ac3dd50aea6d1b8a.css","static/chunks/pages/_app-b1085a1ba0a9f09e.js"],"/_error":["static/chunks/webpack-ee7e63bc15b31913.js","static/chunks/framework-64ad27b21261a9ce.js","static/chunks/main-b7db6b1126c92596.js","static/chunks/pages/_error-7a92967bea80186d.js"],"/about":["static/chunks/webpack-ee7e63bc15b31913.js","static/chunks/framework-64ad27b21261a9ce.js","static/chunks/main-b7db6b1126c92596.js","static/chunks/664-3c232805d7900af2.js","static/chunks/pages/about-4b3aa4021f7df790.js"],"/categories/birthday":["static/chunks/webpack-ee7e63bc15b31913.js","static/chunks/framework-64ad27b21261a9ce.js","static/chunks/main-b7db6b1126c92596.js","static/chunks/664-3c232805d7900af2.js","static/chunks/pages/categories/birthday-1621d29d01526991.js"],"/categories/brit":["static/chunks/webpack-ee7e63bc15b31913.js","static/chunks/framework-64ad27b21261a9ce.js","static/chunks/main-b7db6b1126c92596.js","static/chunks/664-3c232805d7900af2.js","static/chunks/pages/categories/brit-dc9f51cfe02b8882.js"],"/categories/events":["static/chunks/webpack-ee7e63bc15b31913.js","static/chunks/framework-64ad27b21261a9ce.js","static/chunks/main-b7db6b1126c92596.js","static/chunks/664-3c232805d7900af2.js","static/chunks/pages/categories/events-c0ca77a8f14340c8.js"],"/categories/wedding":["static/chunks/webpack-ee7e63bc15b31913.js","static/chunks/framework-64ad27b21261a9ce.js","static/chunks/main-b7db6b1126c92596.js","static/chunks/664-3c232805d7900af2.js","static/chunks/pages/categories/wedding-cb5880686defcfdd.js"],"/contact":["static/chunks/webpack-ee7e63bc15b31913.js","static/chunks/framework-64ad27b21261a9ce.js","static/chunks/main-b7db6b1126c92596.js","static/chunks/664-3c232805d7900af2.js","static/chunks/pages/contact-c34660f9b04cf341.js"]},ampFirstPages:[]},self.__BUILD_MANIFEST.lowPriorityFiles=["/static/"+process.env.__NEXT_BUILD_ID+"/_buildManifest.js",,"/static/"+process.env.__NEXT_BUILD_ID+"/_ssgManifest.js"];
+self.__BUILD_MANIFEST = {
+  "polyfillFiles": [
+    "static/chunks/polyfills.js"
+  ],
+  "devFiles": [
+    "static/chunks/react-refresh.js"
+  ],
+  "ampDevFiles": [],
+  "lowPriorityFiles": [],
+  "rootMainFiles": [],
+  "pages": {
+    "/_app": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/_app.js"
+    ],
+    "/_error": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/_error.js"
+    ],
+    "/categories/birthday": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/categories/birthday.js"
+    ],
+    "/categories/events": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/categories/events.js"
+    ]
+  },
+  "ampFirstPages": []
+};
+self.__BUILD_MANIFEST.lowPriorityFiles = [
+"/static/" + process.env.__NEXT_BUILD_ID + "/_buildManifest.js",
+,"/static/" + process.env.__NEXT_BUILD_ID + "/_ssgManifest.js",
+
+];

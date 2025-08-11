@@ -4,9 +4,6 @@ import { useEffect, useState } from 'react';
 const NAV = [
   { href: '/', label: 'בית' },
   { href: '/about', label: 'אודות' },
-  { href: '/categories/birthday', label: 'ימי הולדת' },
-  { href: '/categories/wedding', label: 'חתונות' },
-  { href: '/categories/brit', label: 'ברית' },
   { href: '/categories/events', label: 'אירועים' },
   { href: '/contact', label: 'יצירת קשר' },
 ];
